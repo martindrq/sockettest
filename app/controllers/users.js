@@ -49,12 +49,29 @@ exports.session = function(req, res) {
 };
 
 /**
+ * Session
+ */
+exports.adminsession = function(req, res) {
+    res.redirect('/');
+};
+
+/**
+ * Admin
+ */
+exports.admin = function(req, res) {
+    console.log(User.find());
+    res.render('users/admin', {
+        title: 'Admin',
+        message: req.flash('error')
+    });
+};
+
+/**
  * Create user
  */
 exports.create = function(req, res, next) {
     var user = new User(req.body);
     var message = null;
-
     user.provider = 'local';
     user.save(function(err) {
         if (err) {

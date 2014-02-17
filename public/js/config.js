@@ -31,3 +31,12 @@ angular.module('mean').config(['$locationProvider',
         $locationProvider.hashPrefix('!');
     }
 ]);
+
+angular.module('mean').config(['$tooltipProvider', function($tooltipProvider){
+  $tooltipProvider.setTriggers({
+    'mouseenter': 'mouseleave',
+    'click': 'click',
+    'focus': 'blur',
+    'never': 'mouseleave' // <- This ensures the tooltip will go away on mouseleave
+  });
+}]);

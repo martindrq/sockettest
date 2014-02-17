@@ -9,6 +9,9 @@ module.exports = function(app, passport) {
     app.get('/signup', users.signup);
     app.get('/signout', users.signout);
     app.get('/users/me', users.me);
+    app.get('/admin', users.admin);
+
+    //app.get('/users/createadmin', users.createadmin);
 
     // Setting up the users api
     app.post('/users', users.create);

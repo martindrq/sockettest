@@ -42,7 +42,7 @@ module.exports = function(passport) {
                 }
                 if (!user) {
                     return done(null, false, {
-                        message: 'Unknown user'
+                        message: 'Unknown userjhghj'
                     });
                 }
                 if (!user.authenticate(password)) {

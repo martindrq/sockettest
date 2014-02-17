@@ -1,3 +1,9 @@
+@import url(http://fonts.googleapis.com/css?family=Hammersmith+One);
+
+body{
+    font-family: 'Droid Sans', sans-serif;
+}
+
 .navbar .nav>li>a.brand {
     padding-left:20px;
     margin-left:0
@@ -22,4 +28,56 @@ footer {
 
 footer p {
     padding:5px 0 12px 10px
+}
+
+.event h1{
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+.event .event-rat{
+    float:left;
+    cursor: pointer;
+    font-size: 19px;
+}
+
+.event .event-info{
+    font-size: 19px;
+    text-align: left;
+    margin-left: 100px;
+}
+
+.event-info-cont{
+    border-right: 2px solid #E3E3E3;
+}
+
+span.tooltip {
+  opacity: 0.9;
+  position: absolute;
+  left: -40px;
+  top: 80px;
+  width: 200px;
+  height: 71px;
+  line-height: 15px;
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
+  color: white;
+  background: black;
+  border: 4px solid black;
+  border-radius: 5px;
+  text-shadow: rgba(0, 0, 0, 0.0980392) 1px 1px 1px;
+  box-shadow: rgba(0, 0, 0, 0.0980392) 1px 1px 2px 0px;
+}
+
+span.tooltip:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 10px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+  top: 67px;
+  left: 50px;
 }

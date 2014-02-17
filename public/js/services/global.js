@@ -12,3 +12,19 @@ angular.module('mean.system').factory('Global', [
         return _this._data;
     }
 ]);
+
+angular.module('mean.events').factory('Events', ['$resource', function($resource) {
+    return $resource('events/:eventId', {
+        eventId: '@_id'
+    }, {
+      query: {
+            method:'GET', isArray:true
+        },
+      save: {
+            mehod:'POST'
+        },
+      update: {
+            method: 'PUT'
+        }
+    });
+}]);

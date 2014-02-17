@@ -1,3 +1,42 @@
-<section data-ng-controller="IndexController">
-	<h1>This is the home view</h1>
+<section data-ng-controller="EventsController">
+	<center>
+
+		
+		<section class='event well well-small' ng-repeat='event in events track by event._id' tabIndex="{{event._id}}">
+			<div class='row'>
+			<div class='col-md-6 event-info-cont'>
+				<h1>{{event.title}}</h1>
+				<div class='event-info'>
+					<p><img width='20px' height='20px' src="http://static4.wikia.nocookie.net/__cb20130623203217/onceuponatime8042/images/3/3d/IconTime.png" class="img-polaroid">Cuando : {{event.when}}</p>
+					<p> <img width='20px' height='20px' src="https://cdn2.iconfinder.com/data/icons/flat-ui-icons-24-px/24/location-24-512.png" class="img-polaroid">Donde : {{event.where}}</p>
+				</div>
+				<div class='event-rat' ng-click='like()'
+					<i class="icon-search"></i>
+					<img width='60px' height='60px' src="http://www.iconsdb.com/icons/download/gray/facebook-like-256.png" class="img-polaroid">
+					{{event.likes}}
+				</div>
+				<span class='tooltip  animate-show' ng-show="event.notifupdated">
+					<img src="{{event.user_image_url}}">
+					{{event.user.name}}
+				</span>
+			</div>
+			<div class='col-md-6'>
+				<img width='400px' height='200px' src="https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-prn2/t1/q71/s720x720/1618552_10203141779011568_542357554_n.jpg" class="img-polaroid">
+			</div>
+			</div>
+		</section>
+
+	</center>
+
+
+	<script type="text/ng-template" id="myModalContent.html">
+	    <div class="modal-header">
+	        <h3>Conectate!</h3>
+	    </div>
+	    <div class="modal-body">
+	    	<a href='/auth/facebook'>Signin </a>
+	    <div class="modal-footer">
+	        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+	    </div>
+	</script>
 </section>

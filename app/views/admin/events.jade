@@ -1,0 +1,27 @@
+extends ../layouts/default
+
+block content
+  .col-md-12
+        if message && message.length
+          .fade.in.alert.alert-error
+            button.close(type="button", data-dismiss="alert") &times;
+            strong #{message}
+  form.signin.form-horizontal(action="/admin/events/create", method="post")
+    .form-group
+      label.col-md-4.control-label(for='title') Nombre
+      .col-md-4
+        input#title.form-control(type='text', name="title", placeholder='Titulo')
+
+    .form-group
+      label.col-md-4.control-label(for='fecha') Fecha
+      .col-md-4
+        input#fecha.form-control(type='text', name="when", placeholder='Fecha')
+
+    .form-group
+      label.col-md-4.control-label(for='lugar') Lugar
+      .col-md-4
+        input#lugar.form-control(type='lugar', name="where", placeholder='Lugar')
+
+    .form-group
+      .col-md-offset-4.col-md-8
+        button.btn.btn-primary(type='submit') Crear
